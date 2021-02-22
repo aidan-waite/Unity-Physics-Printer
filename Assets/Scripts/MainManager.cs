@@ -14,6 +14,7 @@ public class MainManager : MonoBehaviour
     public TextMeshProUGUI OutputFolderText;
     public TextMeshProUGUI FeedbackText;
     public GameObject Canvas;
+    public RawImage InputImage;
 
     ExtensionFilter[] extensions = new [] {
         new ExtensionFilter("Image Files", "png", "jpg", "jpeg" ),
@@ -69,6 +70,7 @@ public class MainManager : MonoBehaviour
             FeedbackText.text = "Something went wrong: " + load.error;
         } else {
             InputImageTexture = load.texture;
+            InputImage.texture = InputImageTexture;
         }
     }
 }
